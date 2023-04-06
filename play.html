@@ -45,14 +45,16 @@
             </div>
             <div class="game">
                 <div class="button-container">
-                    <button class="button-top-left"></button>
-                    <button class="button-top-right"></button>
-                    <button class="button-bottom-left"></button>
-                    <button class="button-bottom-right"></button>
+                    <!-- buttons are discovered in the JavaScript by selecting the game-button class -->
+                    <!-- onclick triggers a button push interaction -->
+                    <button id="green" class="game-button button-top-left" onclick="game.pressButton(this)"></button>
+                    <button id="red" class="game-button button-top-right" onclick="game.pressButton(this)"></button>
+                    <button id="yellow" class="game-button button-bottom-left" onclick="game.pressButton(this)"></button>
+                    <button id="blue" class="game-button button-bottom-right" onclick="game.pressButton(this)"></button>
                     <div class="controls center">
                         <div class="game-name">Simon<sup>&reg;</sup></div>
-                        <div class="score center">--</div>
-                        <button class="btn btn-primary">Reset</button>
+                        <div id="score" class="score center">--</div>
+                        <button class="btn btn-primary" onclick="game.reset()">Reset</button>
                     </div>
                 </div>
             </div>
@@ -68,15 +70,20 @@
                 >
             </div>
         </footer>
+
+        <!-- Script is located at the bottom because it references HTML elements during initialization -->
+        <script src="play.js"></script>
     </body>
+</html>
+<!--
     <body>
-        <!-- Use header, main, and footer elements to give semantic structure -->
+         Use header, main, and footer elements to give semantic structure 
         <header>
             <h1>Simon<sup>&reg;</sup></h1>
 
-            <!-- Navigation elements -->
+             Navigation elements 
             <nav>
-                <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+                 Menu is a semantic alternative to <ul> that represents an interaction 
                 <menu>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="play.html">Play</a></li>
@@ -85,7 +92,7 @@
                 </menu>
             </nav>
 
-            <!-- This next thing is because we don't have style -->
+             This next thing is because we don't have style 
             <hr />
         </header>
 
@@ -95,7 +102,7 @@
                 <span class="player-name">Mystery player</span>
             </div>
 
-            <!-- More old-html formatting -->
+             More old-html formatting 
             <br />
 
             <div>
@@ -122,10 +129,10 @@
                                     height="100"
                                     width="100"
                                 >
-                                    <!-- SVG
+                                     SVG
                                         M move <to x,y>
                                         Q quadratic curve <control point x,y> <to x,y>
-                                    -->
+                                    
                                     <path d="M 95,5 95,95 5,95 Q 5,5 95,5" fill="green" />
                                 </svg>
                             </button>
